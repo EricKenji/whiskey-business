@@ -57,7 +57,7 @@ const resolvers = {
             throw new AuthenticationError('You need to be logged in!');
         },
 
-        removeBook: async (parent, { idDrink }, context) => {
+        removeDrink: async (parent, { idDrink }, context) => {
             //only logged in users can use this mutation
             if (context.user) {
                 const updatedUser = await User.findByIdAndUpdate(
