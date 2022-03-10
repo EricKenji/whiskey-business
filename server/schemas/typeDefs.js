@@ -9,7 +9,7 @@ const typeDefs = gql`
     }
 
     type Drink {
-        _id: ID
+        
         name: String
         ingredients: String
         instructions: String
@@ -17,6 +17,11 @@ const typeDefs = gql`
         image: String
     }
 
+    type Auth {
+            token: ID!
+            user: User
+    }
+    
     type Query {
         me: User
     }
@@ -28,10 +33,7 @@ const typeDefs = gql`
         removeDrink(idDrink: ID!): User
     }
 
-    type Auth {
-        token: ID!
-        user: User
-    }
+    
 `
 
 module.exports = typeDefs;
