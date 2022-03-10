@@ -9,11 +9,10 @@ const typeDefs = gql`
     }
 
     type Drink {
-        _id: ID
+        idDrink: ID!
         name: String
         ingredients: String
         instructions: String
-        idDrink: ID!
         image: String
     }
 
