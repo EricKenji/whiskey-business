@@ -26,7 +26,9 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-
+        <Switch>
+          <Route></Route>
+        </Switch>
       </Router>
     </ApolloProvider>
   );
