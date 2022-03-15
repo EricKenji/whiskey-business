@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "apollo-server-express": "^3.6.3",
-    "concurrently": "^7.0.0"
+    "concurrently": "^7.0.0",
+    "react-bootstrap": "^2.2.1"
   },
   "name": "whiskey-business",
   "description": "",

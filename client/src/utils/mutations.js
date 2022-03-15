@@ -41,7 +41,7 @@ export const SAVE_DRINK = gql`
     }
 `
 
-export const removeDrink = gql`
+export const REMOVE_DRINK = gql`
     mutation removeDrink($idDrink: ID!) {
         removeDrink(idDrink: $idDrink) {
             _id
