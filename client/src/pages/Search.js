@@ -32,21 +32,51 @@ const Search = () => {
 
     try {
       const response = await fetch(
-        `https://www.thecocktaildb.com/api/json/v1/1/search.php?q=${searchInput}`
+        `https:www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchInput}`
       );
 
       if (!response.ok) {
         throw new Error('something went wrong!');
       }
 
-      const { items } = await response.json();
-
-      const drinkData = items.map((drink) => ({
-        drinkId: drink.id,
+      const { drinks } = await response.json();
+      console.log(drinks);
+      const drinkData = drinks.map((drink) => ({
+        id: drink.drinkId,
         title: drink.strDrink,
         instructions: drink.strInstructions,
         image: drink.strDrinkThumb || '',
         glass: drink.strGlass || ['No glass specified'],
+        ingredient1: drink.strIngredient1,
+        ingredient2: drink.strIngredient2,
+        ingredient3: drink.strIngredient3,
+        ingredient4: drink.strIngredient4,
+        ingredient5: drink.strIngredient5,
+        ingredient6: drink.strIngredient6,
+        ingredient7: drink.strIngredient7,
+        ingredient8: drink.strIngredient8,
+        ingredient9: drink.strIngredient9,
+        ingredient10: drink.strIngredient10,
+        ingredient11: drink.strIngredient11,
+        ingredient12: drink.strIngredient12,
+        ingredient13: drink.strIngredient13,
+        ingredient14: drink.strIngredient14,
+        ingredient15: drink.strIngredient15,
+        measure1: drink.strMeasure1,
+        measure2: drink.strMeasure2,
+        measure3: drink.strMeasure3,
+        measure4: drink.strMeasure4,
+        measure5: drink.strMeasure5,
+        measure6: drink.strMeasure6,
+        measure7: drink.strMeasure7,
+        measure8: drink.strMeasure8,
+        measure9: drink.strMeasure9,
+        measure10: drink.strMeasure10,
+        measure11: drink.strMeasure11,
+        measure12: drink.strMeasure12,
+        measure13: drink.strMeasure13,
+        measure14: drink.strMeasure14,
+        measure15: drink.strMeasure15,
         // add ingredients & measurements here!!
       }));
 
@@ -112,13 +142,30 @@ const Search = () => {
                   <img
                     src={drink.image}
                     alt={`The image for ${drink.title}`}
-                    variant="top"
                   />
                 ) : null}
                 <div>
                   <h3>{drink.title}</h3>
                   <p className="small">Glass: {drink.glass}</p>
-                  <p>{drink.instructions}</p>
+                  <p>Ingredients:</p>
+                  <ul>
+                    {drink.ingredient1 ? <li>{drink.measure1} {drink.ingredient1}</li> : null}
+                    {drink.ingredient2 ? <li>{drink.measure2} {drink.ingredient2}</li> : null}
+                    {drink.ingredient3 ? <li>{drink.measure3} {drink.ingredient3}</li> : null}
+                    {drink.ingredient4 ? <li>{drink.measure4} {drink.ingredient4}</li> : null}
+                    {drink.ingredient5 ? <li>{drink.measure5} {drink.ingredient5}</li> : null}
+                    {drink.ingredient6 ? <li>{drink.measure6} {drink.ingredient6}</li> : null}
+                    {drink.ingredient7 ? <li>{drink.measure7} {drink.ingredient7}</li> : null}
+                    {drink.ingredient8 ? <li>{drink.measure8} {drink.ingredient8}</li> : null}
+                    {drink.ingredient9 ? <li>{drink.measure9} {drink.ingredient9}</li> : null}
+                    {drink.ingredient10 ? <li>{drink.measure10} {drink.ingredient10}</li> : null}
+                    {drink.ingredient11 ? <li>{drink.measure11} {drink.ingredient11}</li> : null}
+                    {drink.ingredient12 ? <li>{drink.measure12} {drink.ingredient12}</li> : null}
+                    {drink.ingredient13 ? <li>{drink.measure13} {drink.ingredient13}</li> : null}
+                    {drink.ingredient14 ? <li>{drink.measure14} {drink.ingredient14}</li> : null}
+                    {drink.ingredient15 ? <li>{drink.measure15} {drink.ingredient15}</li> : null}
+                  </ul>
+                  <p>Instructions: {drink.instructions}</p>
                   {Auth.loggedIn() && (
                     <button
                       disabled={savedDrinkIds?.some(
