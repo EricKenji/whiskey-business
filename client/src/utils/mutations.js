@@ -18,7 +18,6 @@ export const ADD_USER = gql`
             token
             user {
                 _id
-                username
             }
         }
     }
@@ -34,6 +33,7 @@ export const SAVE_DRINK = gql`
                 idDrink
                 name
                 ingredients
+                measurements
                 instructions
                 image
             }
@@ -51,6 +51,7 @@ export const removeDrink = gql`
                 idDrink
                 name
                 ingredients
+                measurements
                 instructions
                 image
             }
