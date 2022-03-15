@@ -12,9 +12,9 @@ const Header = () => {
   };
 
   return (
-    <HStack>
-      <Flex w="100%"  bgGradient="linear(to-r, pink.500, white)" mb="50">      
-        <Box mb="10">
+    <HStack boxShadow='l' p='6' rounded='md' bg='white' bgGradient="linear(to-r, orange.300, white)" >
+      <Flex w="100%"  bgGradient="linear(to-r, orange.300, white)" >      
+        <Box >
           <Link to="/">
             <Heading ml="8" size ="md" fontWeight="semibold" color="white">Whiskey Business
               <FaGlassWhiskey></FaGlassWhiskey>
@@ -33,10 +33,10 @@ const Header = () => {
             </>
           ) : (
             <>
-              <Button colorScheme='pink' size='sm' mr="2" mt="2">
+              <Button colorScheme='orange' size='sm' mr="2" mt="2">
                 <Link to="/login">Login</Link>  
               </Button>
-              <Button colorScheme='pink' size='sm' mt="2" >
+              <Button colorScheme='orange' size='sm' mt="2" >
               <Link to="/signup">Signup</Link>
               </Button>
             </>
