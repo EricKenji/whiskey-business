@@ -124,7 +124,6 @@ import {
     return (
        
         <Container>
-            <Heading>Search for Drinks!</Heading>
             <form onSubmit={handleFormSubmit}>
                 <FormControl isRequired>
                     <Input 
@@ -146,6 +145,8 @@ import {
                     : 'Search for a drink to begin'}
                 </Heading>
                 <Box>
+                  <Stack direction={"row"}>
+                    </Stack>
                     {searchedDrinks.map((drink) => {
                         return(
                             <Center py={12}>
