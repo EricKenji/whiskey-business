@@ -17,7 +17,7 @@ import {
     UnorderedList,
   } from '@chakra-ui/react';
 
-  const SearchDrinks = () => {
+  const Search = () => {
     // create state for holding returned api data
     const [searchedDrinks, setSearchedDrinks] = useState([]);
     // create state for holding our search field data
@@ -246,4 +246,4 @@ import {
     
 }
 
-export default SearchDrinks;
+export default Search;
