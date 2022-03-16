@@ -40,7 +40,7 @@ function Login(props) {
             <Link to="/signup">← Go to Signup</Link>
           </Button>
         </Box>
-        <Text fontWeight='bold' color="orange.300" mb="5" fontSize="lg" >Signup</Text>
+        <Text fontWeight='bold' color="orange.300" mb="5" fontSize="lg" >Log In</Text>
         <form onSubmit={handleFormSubmit}>
           <div className="flex-row space-between my-2">
         <Text fontWeight='semibold' color="orange.300">Email:</Text>
@@ -55,7 +55,7 @@ function Login(props) {
           </div>
           <div className="flex-row space-between my-2">
           <Text fontWeight='semibold' color="orange.300">Password:</Text>
-          <Input placeholder='' id='password' size='sm'onChange={handleChange} />
+          <Input placeholder='' id='password' type='password' size='sm'onChange={handleChange} />
             {/* <input
               placeholder="******"
               name="password"

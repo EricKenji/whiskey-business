@@ -77,7 +77,7 @@ function Signup(props) {
           /> */}
         
         <Text fontWeight='semibold' color="orange.300">Password:</Text>
-        <Input placeholder='******' id='pwd'size='sm' onChange={handleChange}/>
+        <Input placeholder='******' id='pwd'size='sm' type='password' onChange={handleChange}/>
           {/* <input
             placeholder="******"
             name="password"
