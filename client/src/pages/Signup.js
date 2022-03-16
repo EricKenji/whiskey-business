@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 import { ADD_USER } from '../utils/mutations';
-import { Flex, VStack, Box, Spacer, Text } from '@chakra-ui/layout'
+import { VStack, Box, Text } from '@chakra-ui/layout'
 import { Button } from '@chakra-ui/button'
 
 

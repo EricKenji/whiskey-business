@@ -3,8 +3,9 @@ import { useMutation } from "@apollo/client";
 import { Link } from "react-router-dom";
 import { LOGIN_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
-import { Flex, VStack, Box, Spacer, Text } from "@chakra-ui/layout";
+import {VStack, Box, Text } from "@chakra-ui/layout";
 import { Button } from "@chakra-ui/button";
+import { Input } from '@chakra-ui/react';
 
 function Login(props) {
   const [formState, setFormState] = useState({ email: "", password: "" });
@@ -43,23 +44,25 @@ function Login(props) {
         <form onSubmit={handleFormSubmit}>
           <div className="flex-row space-between my-2">
         <Text fontWeight='semibold' color="orange.300">Email:</Text>
-            <input
+        <Input placeholder='' id='email' size='sm'onChange={handleChange} />
+            {/* <input
               placeholder="youremail@test.com"
               name="email"
               type="email"
               id="email"
               onChange={handleChange}
-            />
+            /> */}
           </div>
           <div className="flex-row space-between my-2">
           <Text fontWeight='semibold' color="orange.300">Password:</Text>
-            <input
+          <Input placeholder='' id='password' size='sm'onChange={handleChange} />
+            {/* <input
               placeholder="******"
               name="password"
               type="password"
               id="pwd"
               onChange={handleChange}
-            />
+            /> */}
           </div>
           {error ? (
             <div>
