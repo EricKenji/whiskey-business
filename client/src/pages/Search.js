@@ -145,8 +145,6 @@ import {
                     : 'Search for a drink to begin'}
                 </Heading>
                 <Box>
-                  <Stack direction={"row"}>
-                    </Stack>
                     {searchedDrinks.map((drink) => {
                         return(
                             <Center py={12}>
