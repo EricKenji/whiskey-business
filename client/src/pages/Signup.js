@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 import { ADD_USER } from '../utils/mutations';
-import { Flex, VStack, Box, Spacer, Text } from '@chakra-ui/layout'
+import { VStack, Box, Text } from '@chakra-ui/layout'
 import { Button } from '@chakra-ui/button'
 
 
@@ -17,8 +17,7 @@ function Signup(props) {
       variables: {
         email: formState.email,
         password: formState.password,
-        firstName: formState.firstName,
-        lastName: formState.lastName,
+        username: formState.username,
       },
     });
     const token = mutationResponse.data.addUser.token;
@@ -46,28 +45,18 @@ function Signup(props) {
       <Text fontWeight='bold' color="orange.300" mb="5" fontSize="lg" >Signup</Text>
       <form onSubmit={handleFormSubmit}>
         <div className="flex-row space-between my-2">
-        <Text fontWeight='semibold' color="orange.300">First Name:</Text>
+        <Text fontWeight='semibold' color="orange.300" htmlFor='username'>Username:</Text>
           <input
-            placeholder="First"
-            name="firstName"
-            type="firstName"
-            id="firstName"
+            placeholder="Username"
+            name="username"
+            type="username"
+            id="username"
             onChange={handleChange}
           />
         </div>
+
         <div className="flex-row space-between my-2">
-        <Text fontWeight='semibold' color="orange.300">Last Name:</Text>
-        
-          <input
-            placeholder="Last"
-            name="lastName"
-            type="lastName"
-            id="lastName"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex-row space-between my-2">
-        <Text fontWeight='semibold' color="orange.300">Email:</Text>
+        <Text fontWeight='semibold' color="orange.300" htmlFor='email'>Email:</Text>
           <input
             placeholder="youremail@test.com"
             name="email"
@@ -77,7 +66,7 @@ function Signup(props) {
           />
         </div>
         <div className="flex-row space-between my-2">
-        <Text fontWeight='semibold' color="orange.300">Password:</Text>
+        <Text fontWeight='semibold' color="orange.300" htmlFor='pwd'>Password:</Text>
           <input
             placeholder="******"
             name="password"
@@ -87,7 +76,7 @@ function Signup(props) {
           />
         </div>
         <div className="flex-row flex-end">
-        <Button colorScheme='orange' size='md' mt="2" >Submit</Button>
+        <Button colorScheme='orange' size='md' mt="2" type='submit' >Submit</Button>
         </div>
       </form>
     </div>
