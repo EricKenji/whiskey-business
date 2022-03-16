@@ -5,7 +5,7 @@ import Auth from '../utils/auth';
 import { ADD_USER } from '../utils/mutations';
 import { VStack, Box, Text } from '@chakra-ui/layout'
 import { Button } from '@chakra-ui/button'
-
+import { Input } from '@chakra-ui/react'
 
 function Signup(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -34,7 +34,7 @@ function Signup(props) {
 
   return (
     <VStack>
-    <div className="container my-1">
+    
       <Box mt="4" mb="4">
         <Button color='orange.300' variant='outline'>
           <Link to="/login">← Go to Login</Link>
@@ -79,7 +79,7 @@ function Signup(props) {
         <Button colorScheme='orange' size='md' mt="2" type='submit' >Submit</Button>
         </div>
       </form>
-    </div>
+    
     </VStack>
   );
 }
