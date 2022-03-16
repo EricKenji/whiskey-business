@@ -28,10 +28,12 @@ const Header = () => {
         <nav className="text-center">
           {Auth.loggedIn() ? (
             <>
-              <Link to="/profile">Me</Link>
-              <a href="/" onClick={logout}>
-                Logout
-              </a>
+              <Button colorScheme='orange' size='sm' mr="2" mt="2">
+                <Link to="/profile">Me</Link>  
+              </Button>
+              <Button colorScheme='orange' size='sm' mt="2" onClick={logout} >
+                <Link to="/">Logout</Link>
+              </Button>
             </>
           ) : (
             <>
@@ -39,7 +41,7 @@ const Header = () => {
                 <Link to="/login">Login</Link>  
               </Button>
               <Button colorScheme='orange' size='sm' mt="2" >
-              <Link to="/signup">Signup</Link>
+                <Link to="/signup">Signup</Link>
               </Button>
             </>
           )}

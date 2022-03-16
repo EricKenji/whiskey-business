@@ -88,7 +88,6 @@ import {
           measure13: drink.strMeasure13,
           measure14: drink.strMeasure14,
           measure15: drink.strMeasure15,
-          // add ingredients & measurements here!!
         }));
   
         setSearchedDrinks(drinkData);

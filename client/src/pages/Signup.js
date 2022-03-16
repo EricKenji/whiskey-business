@@ -39,15 +39,15 @@ function Signup(props) {
         <Button color='orange.300' variant='outline'>
           <Link to="/login">← Go to Login</Link>
         </Button>
-  </Box>
+      </Box>
       
 
       <Text fontWeight='bold' color="orange.300" mb="5" fontSize="lg" >Signup</Text>
       <form onSubmit={handleFormSubmit}>
         <div className="flex-row space-between my-2">
         <Text fontWeight='semibold' color="orange.300" htmlFor='username'>Username:</Text>
-          <input
-            placeholder="Username"
+          <Input
+            placeholder="username"
             name="username"
             type="username"
             id="username"
@@ -57,7 +57,7 @@ function Signup(props) {
 
         <div className="flex-row space-between my-2">
         <Text fontWeight='semibold' color="orange.300" htmlFor='email'>Email:</Text>
-          <input
+          <Input
             placeholder="youremail@test.com"
             name="email"
             type="email"
@@ -67,7 +67,7 @@ function Signup(props) {
         </div>
         <div className="flex-row space-between my-2">
         <Text fontWeight='semibold' color="orange.300" htmlFor='pwd'>Password:</Text>
-          <input
+          <Input
             placeholder="******"
             name="password"
             type="password"
