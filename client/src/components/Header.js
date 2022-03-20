@@ -31,6 +31,9 @@ const Header = () => {
               <Button colorScheme='orange' size='sm' mr="2" mt="2">
                 <Link to="/profile">Me</Link>  
               </Button>
+              <Button colorScheme='orange' size='sm' mr="2" mt="2">
+                <Link to="/">Search</Link> 
+              </Button>
               <Button colorScheme='orange' size='sm' mt="2" onClick={logout} >
                 <Link to="/">Logout</Link>
               </Button>

@@ -18,10 +18,12 @@ function Signup(props) {
         email: formState.email,
         password: formState.password,
         username: formState.username,
-      },
+      }, 
     });
+
     const token = mutationResponse.data.addUser.token;
     Auth.login(token);
+    console.log(token)
   };
 
   const handleChange = (event) => {
