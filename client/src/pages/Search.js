@@ -50,10 +50,10 @@ import {
           throw new Error('something went wrong!');
         }
   
-        const { items } = await response.json();
-
-        const drinkData = items.map((drink) => ({
-          drinkId: drink.idDrink,
+        const { drinks } = await response.json();
+        console.log(drinks);
+        const drinkData = drinks.map((drink) => ({
+          id: drink.drinkId,
           title: drink.strDrink,
           instructions: drink.strInstructions,
           image: drink.strDrinkThumb || '',
