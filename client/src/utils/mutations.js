@@ -75,14 +75,8 @@ export const REMOVE_DRINK = gql`
             _id
             email
             savedDrinks {
-<<<<<<< HEAD
-                idDrink
-                name
-                ingredients
-=======
                 drinkId
                 title
->>>>>>> be763837ccfc1f75ba04641d8d45d0210b18e3b8
                 instructions
                 image
                 glass
