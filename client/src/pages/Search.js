@@ -23,7 +23,7 @@ import {
     // create state for holding our search field data
     const [searchInput, setSearchInput] = useState('');
   
-    // create state to hold saved drinkId values
+    // create state to hold saved idDrink values
     const [savedDrinkIds, setSavedDrinkIds] = useState(getSavedDrinkIds());
   
     const [saveDrink, { error }] = useMutation(SAVE_DRINK);
@@ -53,7 +53,7 @@ import {
         const { drinks } = await response.json();
         console.log(drinks);
         const drinkData = drinks.map((drink) => ({
-          id: drink.drinkId,
+          id: drink.idDrink,
           title: drink.strDrink,
           instructions: drink.strInstructions,
           image: drink.strDrinkThumb || '',
@@ -98,9 +98,9 @@ import {
     };
   
     // create function to handle saving a drink to our database
-    const handleSaveDrink = async (drinkId) => {
+    const handleSaveDrink = async (idDrink) => {
       // find the drink in `searchedDrinks` state by the matching id
-      const drinkToSave = searchedDrinks.find((drink) => drink.drinkId === drinkId);
+      const drinkToSave = searchedDrinks.find((drink) => drink.idDrink === idDrink);
   
       // get token
       const token = Auth.loggedIn() ? Auth.getToken() : null;
@@ -114,7 +114,7 @@ import {
           variables: { drinkData: { ...drinkToSave } },
         });
         console.log(savedDrinkIds);
-        setSavedDrinkIds([...savedDrinkIds, drinkToSave.drinkId]);
+        setSavedDrinkIds([...savedDrinkIds, drinkToSave.idDrink]);
       } catch (err) {
         console.error(err);
       }
@@ -223,16 +223,19 @@ import {
                                     {Auth.loggedIn() && (
                                         <Button
                                         disabled={savedDrinkIds?.some(
-                                            (savedId) => savedId === drink.drinkId
+                                            (savedId) => savedId === drink.idDrink
+                                            
                                         )}
                                         className="btn-block btn-info"
-                                        onClick={() => handleSaveDrink(drink.drinkId)}
+                                        onClick={() => handleSaveDrink(drink.idDrink)}
                                         >
-                                        {savedDrinkIds?.some((savedId) => savedId === drink.drinkId)
+                                        {savedDrinkIds?.some((savedId) => savedId === drink.idDrink)
                                             ? 'Drink Already Saved!'
                                             : 'Save This Drink!'}
                                         </Button>
+                                        
                                     )}
+      
                                 </Box>
                             </Center>
                         )
@@ -240,6 +243,7 @@ import {
                 </Box>
             </Box>
         </Container>
+        
       );
     
 }

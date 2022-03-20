@@ -33,7 +33,6 @@ export const SAVE_DRINK = gql`
                 idDrink
                 name
                 ingredients
-                measurements
                 instructions
                 image
             }
@@ -51,7 +50,6 @@ export const REMOVE_DRINK = gql`
                 idDrink
                 name
                 ingredients
-                measurements
                 instructions
                 image
             }
