@@ -5,15 +5,16 @@ import { LOGIN_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
 import {VStack, Box, Text } from "@chakra-ui/layout";
 import { Button } from "@chakra-ui/button";
-import { Input } from '@chakra-ui/react';
+import { Input, FormLabel } from '@chakra-ui/react';
 
 function Login(props) {
-  const [formState, setFormState] = useState({ email: "", password: "" });
+  const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error }] = useMutation(LOGIN_USER);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
+      console.log('test');
       const mutationResponse = await login({
         variables: { email: formState.email, password: formState.password },
       });
@@ -40,15 +41,15 @@ function Login(props) {
             <Link to="/signup">← Go to Signup</Link>
           </Button>
         </Box>
-        <Text fontWeight='bold' color="orange.300" mb="5" fontSize="lg" >Signup</Text>
+        <Text fontWeight='bold' color="orange.300" mb="5" fontSize="lg" >Login</Text>
         <form onSubmit={handleFormSubmit}>
           <div className="flex-row space-between my-2">
-        <Text fontWeight='semibold' color="orange.300">Email:</Text>
-        <Input placeholder='' id='email' size='sm'type='email' onChange={handleChange} />
+            <FormLabel fontWeight='semibold' color="orange.300" htmlFor='email'>Email:</FormLabel>
+            <Input placeholder='youremail@test.com' id='email' size='sm'type='email' name="email" onChange={handleChange} />
           </div>
           <div className="flex-row space-between my-2">
-          <Text fontWeight='semibold' color="orange.300">Password:</Text>
-          <Input placeholder='' id='password' size='sm' type='password' onChange={handleChange} />
+            <FormLabel fontWeight='semibold' color="orange.300" htmlFor='password'>Password:</FormLabel>
+            <Input placeholder="******" id='password' size='sm' type='password' name="password" onChange={handleChange} />
           </div>
           {error ? (
             <div>
@@ -58,7 +59,7 @@ function Login(props) {
             </div>
           ) : null}
           <div className="flex-row flex-end">
-          <Button colorScheme='orange' size='md' mt="2" >Submit</Button>
+            <Button colorScheme='orange' size='md' mt="2" type="submit">Submit</Button>
           </div>
         </form>
       </div>

@@ -23,7 +23,7 @@ import {
     // create state for holding our search field data
     const [searchInput, setSearchInput] = useState('');
   
-    // create state to hold saved drinkId values
+    // create state to hold saved idDrink values
     const [savedDrinkIds, setSavedDrinkIds] = useState(getSavedDrinkIds());
   
     const [saveDrink, { error }] = useMutation(SAVE_DRINK);
@@ -50,10 +50,10 @@ import {
           throw new Error('something went wrong!');
         }
   
-        const { drinks } = await response.json();
-        console.log(drinks);
-        const drinkData = drinks.map((drink) => ({
-          id: drink.drinkId,
+        const { items } = await response.json();
+
+        const drinkData = items.map((drink) => ({
+          drinkId: drink.idDrink,
           title: drink.strDrink,
           instructions: drink.strInstructions,
           image: drink.strDrinkThumb || '',

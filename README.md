@@ -6,7 +6,7 @@
 
 ## User Story
 
-A place for drink enthusiats to come together, find new drinks, and share their favorite recipes.
+A place for drink enthusiast to come together, find new drinks, and share their favorite recipes.
 
 ## Usage
 
@@ -37,6 +37,3 @@ You can use the website to search cocktail recipies. Create an account to save a
 The following image demonstrates the web application's appearance and functionality:
 
 ![* Homepage.](/client/public/images/homepage-screenshot.jpg)
-
-![* Search-page.](/client/public/images/search-screenshot.jpg)
-
