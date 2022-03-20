@@ -3,7 +3,7 @@ const { gql } = require('apollo-server-express')
 const typeDefs = gql`
     input DrinkInput {
         name:String! 
-        ingredients: String 
+        ingredients: String
         instructions: String! 
         idDrink: String! 
         image: String

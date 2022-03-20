@@ -17,12 +17,13 @@ function Signup(props) {
       variables: {
         email: formState.email,
         password: formState.password,
-        firstName: formState.firstName,
-        lastName: formState.lastName,
-      },
+        username: formState.username,
+      }, 
     });
+
     const token = mutationResponse.data.addUser.token;
     Auth.login(token);
+    console.log(token)
   };
 
   const handleChange = (event) => {
@@ -40,55 +41,53 @@ function Signup(props) {
         <Button color='orange.300' variant='outline'>
           <Link to="/login">← Go to Login</Link>
         </Button>
-  </Box>
+      </Box>
       
 
       <Text fontWeight='bold' color="orange.300" mb="5" fontSize="lg" >Signup</Text>
       <form onSubmit={handleFormSubmit}>
-        
-        <Text fontWeight='semibold' color="orange.300">First Name:</Text>
-        <Input placeholder='' id='firstName'size='sm' onChange={handleChange}/>
-          {/* <input
-            placeholder="First"
-            name="firstName"
-            type="firstName"
-            id="firstName"
+        <div className="flex-row space-between my-2">
+        <Text fontWeight='semibold' color="orange.300" htmlFor='username'>Username:</Text>
+          <Input
+            placeholder="username"
+            name="username"
+            type="username"
+            id="username"
             onChange={handleChange}
-          /> */}
-        
-        <Text fontWeight='semibold' color="orange.300">Last Name:</Text>
-        <Input placeholder='' id='lastName'size='sm' onChange={handleChange}/>
-          {/* <input
-            placeholder="Last"
-            name="lastName"
-            type="lastName"
-            id="lastName"
-            
-          /> */}
-        
-        <Text fontWeight='semibold' color="orange.300">Email:</Text>
-          <Input placeholder='' id='email'size='sm' onChange={handleChange}/>
-        {/* <input
+          />
+        </div>
+
+        <div className="flex-row space-between my-2">
+        <Text fontWeight='semibold' color="orange.300" htmlFor='email'>Email:</Text>
+          <Input
             placeholder="youremail@test.com"
             name="email"
             type="email"
             id="email"
             onChange={handleChange}
+<<<<<<< HEAD
           /> */}
         
         <Text fontWeight='semibold' color="orange.300">Password:</Text>
         <Input placeholder='******' id='pwd'size='sm' type='password' onChange={handleChange}/>
           {/* <input
+=======
+          />
+        </div>
+        <div className="flex-row space-between my-2">
+        <Text fontWeight='semibold' color="orange.300" htmlFor='pwd'>Password:</Text>
+          <Input
+>>>>>>> b22b451f4b0179fb79544596248ebf27f47a96d6
             placeholder="******"
             name="password"
             type="password"
             id="pwd"
             onChange={handleChange}
-          /> */}
-       
-        
-        <Button colorScheme='orange' size='md' mt="2" >Submit</Button>
-        
+          />
+        </div>
+        <div className="flex-row flex-end">
+        <Button colorScheme='orange' size='md' mt="2" type='submit' >Submit</Button>
+        </div>
       </form>
     
     </VStack>
