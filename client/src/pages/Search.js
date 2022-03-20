@@ -43,7 +43,7 @@ import {
   
       try {
         const response = await fetch(
-          `https:www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchInput}`
+          `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchInput}`
         );
   
         if (!response.ok) {
