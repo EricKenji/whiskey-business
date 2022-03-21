@@ -5,7 +5,7 @@ import Auth from '../utils/auth';
 import { Flex, HStack, Heading, Box, Spacer,  } from '@chakra-ui/layout'
 import { Button } from '@chakra-ui/button'
 import { FaGlassWhiskey } from 'react-icons/fa'
-import { Image } from '@chakra-ui/react'
+
 
 const Header = () => {
   const logout = event => {

@@ -41,31 +41,15 @@ function Login(props) {
             <Link to="/signup">← Go to Signup</Link>
           </Button>
         </Box>
-<<<<<<< HEAD
-        <Text fontWeight='bold' color="orange.300" mb="5" fontSize="lg" >Log In</Text>
-=======
         <Text fontWeight='bold' color="orange.300" mb="5" fontSize="lg" >Login</Text>
->>>>>>> b22b451f4b0179fb79544596248ebf27f47a96d6
         <form onSubmit={handleFormSubmit}>
           <div className="flex-row space-between my-2">
             <FormLabel fontWeight='semibold' color="orange.300" htmlFor='email'>Email:</FormLabel>
             <Input placeholder='youremail@test.com' id='email' size='sm'type='email' name="email" onChange={handleChange} />
           </div>
           <div className="flex-row space-between my-2">
-<<<<<<< HEAD
-          <Text fontWeight='semibold' color="orange.300">Password:</Text>
-          <Input placeholder='' id='password' type='password' size='sm'onChange={handleChange} />
-            {/* <input
-              placeholder="******"
-              name="password"
-              type="password"
-              id="pwd"
-              onChange={handleChange}
-            /> */}
-=======
             <FormLabel fontWeight='semibold' color="orange.300" htmlFor='password'>Password:</FormLabel>
             <Input placeholder="******" id='password' size='sm' type='password' name="password" onChange={handleChange} />
->>>>>>> b22b451f4b0179fb79544596248ebf27f47a96d6
           </div>
           {error ? (
             <div>

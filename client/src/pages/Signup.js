@@ -65,19 +65,11 @@ function Signup(props) {
             type="email"
             id="email"
             onChange={handleChange}
-<<<<<<< HEAD
-          /> */}
-        
-        <Text fontWeight='semibold' color="orange.300">Password:</Text>
-        <Input placeholder='******' id='pwd'size='sm' type='password' onChange={handleChange}/>
-          {/* <input
-=======
           />
         </div>
         <div className="flex-row space-between my-2">
         <Text fontWeight='semibold' color="orange.300" htmlFor='pwd'>Password:</Text>
           <Input
->>>>>>> b22b451f4b0179fb79544596248ebf27f47a96d6
             placeholder="******"
             name="password"
             type="password"

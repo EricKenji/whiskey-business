@@ -15,7 +15,10 @@ import {
     Button,
     FormControl,
     UnorderedList,
+    HStack,
+    VStack
   } from '@chakra-ui/react';
+  import { Flex } from '@chakra-ui/layout'
 
   const Search = () => {
     // create state for holding returned api data
@@ -121,7 +124,7 @@ import {
     };
 
     return (
-       
+        <HStack>
         <Container>
             <form onSubmit={handleFormSubmit}>
                 <FormControl isRequired>
@@ -131,21 +134,25 @@ import {
                     onChange={(e) => setSearchInput(e.target.value)}
                     type="text"
                     size="lg"
+                    mt="5"
                     placeholder="Search for a drink"
                     ></Input>
-                    <Button colorScheme='orange' type="submit">Search</Button>
+                    <Button colorScheme='orange' type="submit" mt="5" flex="5">Search</Button>
                 </FormControl>
             </form>
 
-            <Box>
-                <Heading>
+           
+            <Box id="thisone">
+                <Heading mt='5'>
                 {searchedDrinks.length
                     ? `Viewing ${searchedDrinks.length} results:`
                     : 'Search for a drink to begin'}
                 </Heading>
-                <Box>
+                 <Box>
+ 
                     {searchedDrinks.map((drink) => {
                         return(
+                          
                             <Center py={12}>
                                 <Box
                                     role={'group'}
@@ -216,7 +223,7 @@ import {
                                                 {drink.ingredient15 ? <li>{drink.measure15} {drink.ingredient15}</li> : null}
                                             </UnorderedList>
                                             <Text fontWeight={800} fontSize={'xl'}>
-                                                Instructions: {drink.instructions}
+                                                Instructions: <Text fontWeight={300}>{drink.instructions}</Text>
                                             </Text>
                                         </Stack>
                                     </Stack>
@@ -238,11 +245,16 @@ import {
       
                                 </Box>
                             </Center>
+                            
+                            
                         )
                     })}
                 </Box>
             </Box>
-        </Container>
+                    
+            
+        </Container> 
+        </HStack>        
         
       );
     
