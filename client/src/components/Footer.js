@@ -1,12 +1,18 @@
 import React from 'react';
+import { 
+Flex,
+Text,
+
+} from '@chakra-ui/react'
+
 
 const Footer = () => {
   return (
-    <footer className="w-100 mt-auto bg-secondary p-4">
-      <div className="container">
-        &copy;{new Date().getFullYear()} Whiskey Business
-      </div>
-    </footer>
+    <Flex justify='center'>
+      
+       <Text pt='20'>&copy;{new Date().getFullYear()} Whiskey Business </Text> 
+     
+    </Flex>
   );
 };
 
