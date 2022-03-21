@@ -16,9 +16,8 @@ import {
     FormControl,
     UnorderedList,
     HStack,
-    VStack
   } from '@chakra-ui/react';
-  import { Flex } from '@chakra-ui/layout'
+  
 
   const Search = () => {
     // create state for holding returned api data
@@ -142,7 +141,7 @@ import {
             </form>
 
            
-            <Box id="thisone">
+            <Box>
                 <Heading mt='5'>
                 {searchedDrinks.length
                     ? `Viewing ${searchedDrinks.length} results:`

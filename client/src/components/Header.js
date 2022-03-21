@@ -14,11 +14,11 @@ const Header = () => {
   };
 
   return (
-    <HStack boxShadow='l' p='6' rounded='md' bg='white' bgGradient="linear(to-r, orange.300, white)" > 
-      <Flex w="100%"  bgGradient="linear(to-r, orange.300, white)" >      
+    <HStack boxShadow='l' p='6' rounded='md' bg='white' bgGradient="linear(to-r, orange.400, white)" > 
+      <Flex w="100%">      
         <Box >
           <Link to="/">
-            <Heading ml="8" size ="md" fontWeight="semibold" color="white">Whiskey Business
+            <Heading ml="8" size ="lg" fontWeight="semibold" color="white">Whiskey Business
               <FaGlassWhiskey></FaGlassWhiskey>
             </Heading>
            </Link>
